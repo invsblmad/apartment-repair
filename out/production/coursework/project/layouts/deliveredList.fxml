@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.DeliveredListController">
+    <children>
+        <Label layoutX="119.0" layoutY="20.0" text="The list of materials" textFill="#2e2532">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <ImageView fx:id="backSign" fitHeight="16.0" fitWidth="12.0" layoutX="81.0" layoutY="32.0" onMousePressed="#returnBack" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/back.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="119.0" layoutY="46.0" text="you have already delivered" textFill="#2e2532">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ScrollPane fx:id="scroll" hbarPolicy="NEVER" layoutX="55.0" layoutY="84.0" prefHeight="466.0" prefWidth="890.0" styleClass="transparent" stylesheets="@../styles/style.css" vbarPolicy="NEVER">
+            <content>
+                <VBox fx:id="orderedMaterials" prefHeight="466.0" prefWidth="890.0" />
+            </content>
+        </ScrollPane>
+        <ImageView fx:id="image" fitHeight="488.0" fitWidth="525.0" layoutX="237.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/messenger.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="text" layoutX="362.0" layoutY="122.0" text="You haven't delivered anything yet" textFill="#2e2532">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>

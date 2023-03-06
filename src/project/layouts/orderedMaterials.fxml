@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.OrderedMaterialsController">
+   <children>
+      <ImageView fx:id="image" fitHeight="530.0" fitWidth="569.0" layoutX="235.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../assets/online-shopping.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="backSign" fitHeight="16.0" fitWidth="12.0" layoutX="71.0" layoutY="33.0" onMousePressed="#returnBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/back.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="109.0" layoutY="21.0" text="My ordered materials" textFill="#2e2532">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="emptyList" layoutX="428.0" layoutY="124.0" text="The list is empty" visible="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ScrollPane fx:id="scroll" hbarPolicy="NEVER" layoutX="45.0" layoutY="92.0" prefHeight="465.0" prefWidth="560.0" styleClass="transparent" stylesheets="@../styles/style.css" vbarPolicy="NEVER">
+         <content>
+            <VBox fx:id="orderedMaterials" prefHeight="466.0" prefWidth="560.0" />
+         </content>
+      </ScrollPane>
+      <ImageView fx:id="orderedImage" fitHeight="361.0" fitWidth="400.0" layoutX="625.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/ordered-purchase.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

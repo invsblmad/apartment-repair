@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.OwnersMaterialsController">
+   <children>
+      <Label layoutX="99.0" layoutY="11.0" text="The list of materials" textFill="#2e2532">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="backSign" fitHeight="16.0" fitWidth="12.0" layoutX="61.0" layoutY="23.0" onMousePressed="#returnBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/back.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="99.0" layoutY="44.0" text="made for your apartment" textFill="#2e2532">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <HBox fx:id="allMaterials" alignment="CENTER" layoutX="383.0" layoutY="107.0" prefHeight="435.0" prefWidth="578.0">
+         <children>
+            <ScrollPane fx:id="scroll" prefHeight="442.0" prefWidth="542.0" stylesheets="@../styles/style.css">
+               <styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="scroll-pane" />
+               </styleClass>
+               <content>
+                  <GridPane fx:id="grid" prefHeight="4.0" prefWidth="42.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <AnchorPane layoutX="73.0" layoutY="147.0" prefHeight="387.0" prefWidth="276.0" style="-fx-background-color: #631D76; -fx-background-radius: 40 40 40 40;">
+         <children>
+            <JFXButton fx:id="cartButton" layoutX="69.0" layoutY="315.0" prefHeight="31.0" prefWidth="137.0" style="-fx-background-radius: 20; -fx-border-color: white; -fx-border-radius: 20;" styleClass="cart-button" stylesheets="@../styles/style.css" text="add to cart" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <Shadow />
+               </effect>
+            </JFXButton>
+            <Label fx:id="name" layoutX="32.0" layoutY="181.0" text="Unknown" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="materialsImage" fitHeight="118.0" fitWidth="113.0" layoutX="75.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../materials/unknown.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="price" layoutX="184.0" layoutY="181.0" text="0$" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="32.0" layoutY="237.0" text="Manufacturer:" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="unit" layoutX="184.0" layoutY="214.0" text="Unit" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="amountField" layoutX="184.0" layoutY="248.0" prefHeight="30.0" prefWidth="48.0" style="-fx-background-color: #631D76; -fx-border-color: white; -fx-border-radius: 13; -fx-text-fill: white" text="0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextField>
+            <ImageView fx:id="increaseIcon" fitHeight="10.0" fitWidth="10.0" layoutX="237.0" layoutY="248.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/triangle.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="decreaseIcon" fitHeight="10.0" fitWidth="10.0" layoutX="237.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@../assets/triangle.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="manufacturer" layoutX="32.0" layoutY="262.0" text="unknown" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="searchField" layoutX="104.0" layoutY="96.0" prefHeight="30.0" prefWidth="213.0" promptText=" Search by name or manufacturer" style="-fx-background-color: white; -fx-border-color: #2e2532; -fx-border-radius: 15;" />
+      <ImageView fx:id="searchIcon" fitHeight="26.0" fitWidth="20.0" layoutX="329.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/searching.png" />
+         </image>
+      </ImageView>
+      <HBox fx:id="searchingResult" alignment="CENTER" layoutX="383.0" layoutY="107.0" prefHeight="435.0" prefWidth="578.0" visible="false">
+         <children>
+            <ScrollPane fx:id="scroll1" prefHeight="442.0" prefWidth="542.0" stylesheets="@../styles/style.css">
+               <styleClass>
+                  <String fx:value="transparent" />
+                  <String fx:value="scroll-pane" />
+               </styleClass>
+               <content>
+                  <GridPane fx:id="grid1" prefHeight="4.0" prefWidth="42.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
+      <ImageView fx:id="refreshIcon" fitHeight="18.0" fitWidth="20.0" layoutX="73.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/refresh.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="menu" fitHeight="27.0" fitWidth="22.0" layoutX="940.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/menu.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="menuClose" fitHeight="27.0" fitWidth="22.0" layoutX="940.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/menu.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="slider" layoutX="940.0" layoutY="100.0" prefHeight="435.0" prefWidth="60.0" style="-fx-background-color: #631D76; -fx-background-radius: 40 0 0 40;">
+         <children>
+            <VBox fx:id="menuButtons" alignment="CENTER" layoutY="118.0" prefHeight="200.0" prefWidth="60.0">
+               <children>
+                  <ImageView fx:id="home" fitHeight="30.0" fitWidth="28.0" onMousePressed="#addressToHome" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/home.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="profile" fitHeight="24.0" fitWidth="23.0" onMousePressed="#addressToProfile" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/profile.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="orderedMaterials" fitHeight="30.0" fitWidth="27.0" onMousePressed="#addressToOrderedList" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/purchase.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="deliveredMaterials" fitHeight="33.0" fitWidth="23.0" onMousePressed="#addressToDeliveredList" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/deliver.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <Label layoutX="20.0" layoutY="84.0" text=". . ." textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="cartIcon" fitHeight="27.0" fitWidth="22.0" layoutX="891.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/owners-cart.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

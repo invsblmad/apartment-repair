@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="110.0" prefWidth="560.0" style="-fx-background-color: f2f3f4; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.ListItemController">
+    <children>
+        <Label fx:id="name" layoutX="60.0" layoutY="35.0" text="Brick" textFill="#2e2532">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="manufacturer" layoutX="60.0" layoutY="59.0" text="Leonardo Stone" textFill="#2e2532" />
+        <TextField fx:id="amountField" editable="false" layoutX="209.0" layoutY="41.0" prefHeight="23.0" prefWidth="48.0" style="-fx-background-color: f2f3f4; -fx-border-color: #2e2532; -fx-border-radius: 13; -fx-background-radius: 13;" />
+        <Label fx:id="price" layoutX="332.0" layoutY="35.0" text="25.66$" textFill="#2e2532">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Label fx:id="unit" layoutX="332.0" layoutY="59.0" text="400 pcs." textFill="#2e2532" />
+        <Label fx:id="state" layoutX="463.0" layoutY="42.0" text="Ordered" textFill="#631d76">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+      <Label fx:id="number" layoutX="22.0" layoutY="45.0" text="1" textFill="#2e2532">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="220.0" prefWidth="434.0" style="-fx-background-radius: 40; -fx-border-color: #2e2532; -fx-border-radius: 40; -fx-background-color: WHITE;" styleClass="shadow" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.ApartmentsInfoController">
+   <children>
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="37.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/person1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="69.0" layoutY="81.0" text="Owner's name" textFill="#2e2532">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="102.0" layoutY="34.0" text="Apartment's information" textFill="#2e2532">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="ownersName" layoutX="69.0" layoutY="103.0" text="Lilie Brooks" textFill="#2e2532" />
+      <Label layoutX="69.0" layoutY="139.0" text="Area" textFill="#2e2532">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="area" layoutX="69.0" layoutY="161.0" text="140.5" textFill="#2e2532" />
+      <Label layoutX="248.0" layoutY="81.0" text="Address" textFill="#2e2532">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="address" layoutX="248.0" layoutY="103.0" text="76977 Triston Land Apt. 285" textFill="#2e2532" />
+      <Label layoutX="248.0" layoutY="139.0" text="Repair type" textFill="#2e2532">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="repairType" layoutX="248.0" layoutY="161.0" text="cosmentic" textFill="#2e2532" />
+      <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="37.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/area1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="20.0" layoutX="215.0" layoutY="90.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/address1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="27.0" fitWidth="20.0" layoutX="215.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/setting1.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="ownersName11" layoutX="101.0" layoutY="161.0" text="sq m" textFill="#2e2532" />
+      <ImageView fx:id="closeIcon" fitHeight="32.0" fitWidth="14.0" layoutX="397.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/close.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

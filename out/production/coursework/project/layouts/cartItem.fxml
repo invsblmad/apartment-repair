@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="110.0" prefWidth="573.0" style="-fx-background-color: white; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.CartIemController">
+   <children>
+      <ImageView fx:id="materialsImage" fitHeight="95.0" fitWidth="104.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../materials/adhesive.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="name" layoutX="142.0" layoutY="35.0" text="Brick" textFill="#2e2532">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="manufacturer" layoutX="142.0" layoutY="59.0" text="Leonardo Stone" textFill="#2e2532" />
+      <TextField fx:id="amountField" editable="false" layoutX="284.0" layoutY="40.0" prefHeight="23.0" prefWidth="48.0" style="-fx-background-color: white; -fx-border-color: #2e2532; -fx-border-radius: 13; -fx-background-radius: 13;" />
+      <Label fx:id="price" layoutX="392.0" layoutY="35.0" text="25.66$" textFill="#2e2532">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="unit" layoutX="392.0" layoutY="59.0" text="400 pcs." textFill="#2e2532" />
+      <Label fx:id="cancel" layoutX="495.0" layoutY="41.0" onMouseClicked="#cancelOrder" text="Cancel" textFill="#631d76">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

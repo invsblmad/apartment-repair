@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="225.0" style="-fx-background-radius: 30;" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.ApartmentBoxController">
+    <children>
+        <Label layoutX="35.0" layoutY="43.0" text="Apartment №" textFill="#2e2532">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="apartmentNumber" layoutX="135.0" layoutY="43.0" styleClass="apartment-box" stylesheets="@../styles/style.css" text="1" textFill="#2e2532">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Label>
+      <JFXButton fx:id="materialsButton" layoutX="34.0" layoutY="93.0" prefHeight="27.0" prefWidth="155.0" style="-fx-background-radius: 20; -fx-border-color: #631D76; -fx-border-radius: 20;" text="view information" textFill="#2e2532">
+         <effect>
+            <Shadow />
+         </effect>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXButton>
+    </children>
+   <styleClass>
+      <String fx:value="apartment-box" />
+      <String fx:value="shadow" />
+   </styleClass>
+</AnchorPane>

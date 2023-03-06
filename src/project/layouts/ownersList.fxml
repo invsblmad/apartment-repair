@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.OwnersListController">
+    <children>
+        <ImageView fx:id="infoIcon" fitHeight="20.0" fitWidth="20.0" layoutX="885.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/home1.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="addIcon" fitHeight="20.0" fitWidth="20.0" layoutX="578.0" layoutY="152.0" onMousePressed="#openMaterialsList" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/plus.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="refreshIcon" fitHeight="18.0" fitWidth="20.0" layoutX="617.0" layoutY="152.0" onMousePressed="#refreshTable" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/refresh.png" />
+            </image>
+        </ImageView>
+        <Label fx:id="usersName" layoutX="130.0" layoutY="20.0" text="Sam Williams" textFill="#2e2532">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <JFXButton fx:id="logOutButton" layoutX="808.0" layoutY="18.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-radius: 20; -fx-background-color: #631D76; -fx-border-radius: 20;" styleClass="log-out-button" stylesheets="@../styles/style.css" text="log out" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <effect>
+                <Shadow />
+            </effect>
+        </JFXButton>
+        <HBox layoutX="298.0" layoutY="14.0" prefHeight="38.0" prefWidth="474.0">
+            <children>
+                <JFXButton fx:id="homeButton" prefHeight="38.0" prefWidth="105.0" style="-fx-background-radius: 20;" styleClass="menu-item" stylesheets="@../styles/style.css" text="Home" textFill="#2e2532">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="profileButton" prefHeight="38.0" prefWidth="130.0" style="-fx-background-radius: 20;" styleClass="menu-item" stylesheets="@../styles/style.css" text="My profile" textFill="#2e2532">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="materialsButton" prefHeight="38.0" prefWidth="170.0" style="-fx-background-radius: 20;" styleClass="menu-item" stylesheets="@../styles/style.css" text="List of materials" textFill="#2e2532">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXButton>
+                <JFXButton fx:id="ownersMaterialsButton" prefHeight="38.0" prefWidth="167.0" style="-fx-background-radius: 20;" styleClass="menu-item" stylesheets="@../styles/style.css" text="Owner's materials" textFill="#2e2532">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </JFXButton>
+            </children>
+        </HBox>
+        <ImageView fitHeight="38.0" fitWidth="43.0" layoutX="78.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/user.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="130.0" layoutY="42.0" text="Foreman" textFill="#2e2532" />
+        <Label layoutX="81.0" layoutY="98.0" text="The apartment's materials" textFill="#2e2532">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+        <TableView fx:id="materialsTable" layoutX="78.0" layoutY="197.0" onMouseClicked="#openEditingWindow" prefHeight="339.0" prefWidth="838.0" stylesheets="@../styles/style.css">
+            <columns>
+                <TableColumn fx:id="number" prefWidth="72.79998779296875" text="№" />
+                <TableColumn fx:id="name" prefWidth="143.99998474121094" text="Name" />
+                <TableColumn fx:id="manufacturer" prefWidth="198.4000244140625" text="Manufacturer" />
+                <TableColumn fx:id="price" prefWidth="120.0" text="Price, $" />
+                <TableColumn fx:id="unit" minWidth="0.79998779296875" prefWidth="112.00006103515625" text="Unit" />
+                <TableColumn fx:id="amount" minWidth="0.0" prefWidth="127.9998779296875" text="Amount" />
+                <TableColumn fx:id="images" prefWidth="56.79996337890623" text="Action" />
+            </columns>
+        </TableView>
+        <AnchorPane fx:id="shadow" opacity="0.53" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: black;" visible="false" />
+        <TextField fx:id="searchField" layoutX="113.0" layoutY="147.0" prefHeight="30.0" prefWidth="213.0" promptText=" Search by name or manufacturer" style="-fx-background-color: white; -fx-border-color: #2e2532; -fx-border-radius: 15;" />
+        <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="80.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/searching.png" />
+            </image>
+        </ImageView>
+        <ImageView fx:id="filterIcon" fitHeight="20.0" fitWidth="20.0" layoutX="652.0" layoutY="152.0" onMouseClicked="#openFilteringWindow" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../assets/filter.png" />
+            </image>
+        </ImageView>
+        <AnchorPane fx:id="editingWindow" layoutX="342.0" layoutY="101.0" prefHeight="398.0" prefWidth="315.0" style="-fx-background-color: white; -fx-border-color: #2e2532; -fx-border-radius: 60; -fx-background-radius: 60;" styleClass="shadow" stylesheets="@../styles/style.css" visible="false">
+            <children>
+                <Label fx:id="title" layoutX="97.0" layoutY="37.0" text="Edit material" textFill="#2e2532">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="nameField" editable="false" layoutX="46.0" layoutY="87.0" prefHeight="28.0" prefWidth="224.0" promptText="Name" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: #2e2532;" />
+                <TextField fx:id="manufacturerField" editable="false" layoutX="46.0" layoutY="134.0" prefHeight="28.0" prefWidth="224.0" promptText="Manufacturer" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: #2e2532;" />
+                <TextField fx:id="priceField" layoutX="46.0" layoutY="181.0" prefHeight="28.0" prefWidth="224.0" promptText="Price" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: #2e2532;" />
+                <TextField fx:id="unitField" editable="false" layoutX="46.0" layoutY="228.0" prefHeight="28.0" prefWidth="224.0" promptText="Unit" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: #2e2532;" />
+                <TextField fx:id="amountField" layoutX="46.0" layoutY="275.0" prefHeight="28.0" prefWidth="224.0" promptText="Amount" style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: #2e2532;" />
+                <JFXButton fx:id="saveButton" layoutX="105.0" layoutY="332.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-color: #631D76; -fx-background-radius: 20;" text="Save" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <effect>
+                        <Shadow />
+                    </effect>
+                </JFXButton>
+                <ImageView fx:id="closeIcon" fitHeight="32.0" fitWidth="14.0" layoutX="258.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../assets/close.png" />
+                    </image>
+                </ImageView>
+                <Label fx:id="emptyField" layoutX="100.0" layoutY="308.0" text="Please fill the all fields" visible="false" />
+            <Label fx:id="wrongNumber" layoutX="107.0" layoutY="308.0" text="Impossible number" visible="false" />
+            </children>
+        </AnchorPane>
+        <JFXComboBox fx:id="ownersBox" focusColor="#631d76" layoutX="705.0" layoutY="147.0" prefHeight="30.0" prefWidth="166.0" promptText="  Name" style="-fx-background-radius: 15; -fx-border-color: #2e2532; -fx-border-radius: 15;" />
+        <AnchorPane fx:id="filteringWindow" layoutX="690.0" layoutY="146.0" prefHeight="114.0" prefWidth="230.0" style="-fx-background-color: white; -fx-background-radius: 25; -fx-border-color: #2e2532; -fx-border-radius: 25;" styleClass="shadow" stylesheets="@../styles/style.css" visible="false">
+            <children>
+                <JFXRadioButton fx:id="maxButton" layoutX="25.0" layoutY="20.0" text="highest price" textFill="#2e2532">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <selectedColor>
+                        <Color red="0.38823530077934265" green="0.11372549086809158" blue="0.4627451002597809" />
+                    </selectedColor>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="filterGroup" />
+                    </toggleGroup>
+                </JFXRadioButton>
+                <JFXRadioButton fx:id="minButton" layoutX="25.0" layoutY="47.0" text="lowest price" textFill="#2e2532" toggleGroup="$filterGroup">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                    <selectedColor>
+                        <Color red="0.38823530077934265" green="0.11372549086809158" blue="0.4627451002597809" />
+                    </selectedColor>
+                </JFXRadioButton>
+                <JFXButton fx:id="applyButton" layoutX="134.0" layoutY="66.0" prefHeight="30.0" prefWidth="81.0" style="-fx-background-radius: 20; -fx-background-color: #631D76; -fx-border-radius: 20;" styleClass="log-out-button" stylesheets="@../styles/style.css" text="apply" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <effect>
+                        <Shadow />
+                    </effect>
+                </JFXButton>
+            </children>
+        </AnchorPane>
+      <ImageView fx:id="backSign" fitHeight="16.0" fitWidth="12.0" layoutX="39.0" layoutY="108.0" onMousePressed="#returnBack" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../assets/back.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.CartListController">
+   <children>
+      <AnchorPane fx:id="payment" layoutX="643.0" layoutY="-2.0" prefHeight="600.0" prefWidth="353.0" visible="false">
+         <children>
+            <Label layoutX="37.0" layoutY="411.0" text="Construction materials: " textFill="#2e2532">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="materialsPrice" layoutX="252.0" layoutY="411.0" text="34.6$" textFill="#2e2532">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="356.0" fitWidth="353.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/credit-card.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="payButton" layoutX="123.0" layoutY="479.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-radius: 20; -fx-background-color: #631D76; -fx-border-radius: 20;" styleClass="log-out-button" stylesheets="@../styles/style.css" text="pay" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <Shadow />
+               </effect>
+            </JFXButton>
+            <Label layoutX="37.0" layoutY="437.0" text="Delivery (10% of the order's cost):" textFill="#2e2532">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="deliveryPrice" layoutX="252.0" layoutY="437.0" text="34.6$" textFill="#2e2532">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="37.0" layoutY="477.0" text="Total cost:" textFill="#2e2532">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalPrice" layoutX="252.0" layoutY="477.0" text="180$" textFill="#2e2532">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="cardPassword" layoutX="78.0" layoutY="350.0" prefHeight="27.0" prefWidth="186.0" promptText="Enter a password" style="-fx-background-color: white; -fx-background-radius: 30; -fx-border-color: #2e2532; -fx-border-radius: 30;" />
+            <JFXButton fx:id="payButton" layoutX="116.0" layoutY="520.0" prefHeight="30.0" prefWidth="106.0" style="-fx-background-radius: 20; -fx-background-color: #631D76; -fx-border-radius: 20;" styleClass="log-out-button" stylesheets="@../styles/style.css" text="pay" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <effect>
+                  <Shadow />
+               </effect>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <Label fx:id="emptyCart" layoutX="424.0" layoutY="123.0" text="The cart is empty" visible="false">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="image" fitHeight="530.0" fitWidth="569.0" layoutX="235.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../assets/shopping-cart.png" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="scroll" hbarPolicy="NEVER" layoutX="48.0" layoutY="77.0" prefHeight="487.0" prefWidth="572.0" styleClass="transparent" stylesheets="@../styles/style.css" vbarPolicy="NEVER">
+         <content>
+            <VBox fx:id="orderedMaterials" prefHeight="476.0" prefWidth="574.0" />
+         </content>
+      </ScrollPane>
+      <ImageView fx:id="backSign" fitHeight="16.0" fitWidth="12.0" layoutX="71.0" layoutY="33.0" onMousePressed="#returnBack" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/back.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="109.0" layoutY="21.0" text="My shopping cart" textFill="#2e2532">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

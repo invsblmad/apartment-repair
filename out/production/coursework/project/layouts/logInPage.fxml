@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" style="-fx-background-color: WHITE;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.controllers.LogInPageController">
+   <children>
+      <ImageView fitHeight="556.0" fitWidth="619.0" layoutX="43.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/repair.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="usernameField" layoutX="642.0" layoutY="228.0" prefHeight="26.0" prefWidth="224.0" promptText="Username" style="-fx-background-color: #edd6f7;" />
+      <PasswordField fx:id="passwordField" layoutX="642.0" layoutY="273.0" prefHeight="26.0" prefWidth="224.0" promptText="Password" style="-fx-background-color: #edd6f7;" />
+      <JFXButton fx:id="logInButton" layoutX="684.0" layoutY="387.0" prefHeight="30.0" prefWidth="139.0" style="-fx-background-color: #631D76; -fx-background-radius: 20;" text="Log in" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <effect>
+            <Shadow />
+         </effect>
+      </JFXButton>
+      <Label layoutX="682.0" layoutY="115.0" text="Welcome!" textFill="#2e2532">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="723.0" layoutY="170.0" text="Log in" textFill="#2e2532">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="accountTypeBox" focusColor="#2e2532" layoutX="670.0" layoutY="329.0" prefHeight="26.0" prefWidth="166.0" promptText="Select your account type" style="-fx-background-radius: 5;" />
+      <Label layoutX="642.0" layoutY="445.0" text="Don't have an account yet?" textFill="#2e2532" />
+      <JFXButton fx:id="signUpButton" layoutX="808.0" layoutY="438.0" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: WHITE; -fx-background-radius: 20;" text="Sign up" textFill="#2e2532" underline="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="wrongData" layoutX="675.0" layoutY="308.0" text="wrong username or password" textFill="#8c8c8c" visible="false" />
+      <Label fx:id="emptyAccountType" layoutX="674.0" layoutY="362.0" text="please select an account type" textFill="#8c8c8c" visible="false" />
+      <Label fx:id="emptyFields" layoutX="685.0" layoutY="308.0" text="please fill the empty fields" textFill="#8c8c8c" visible="false" />
+   </children>
+</AnchorPane>
